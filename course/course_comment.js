@@ -8,9 +8,10 @@ function fill_textbooks() {
 
     for (let i = 0; i < list.length; i++) {
         let q = list[i];
+        console.log(q)
 
         let text = q.textContent;
-        if (text.match("选择题") != null || text.match("主观题") != null) {
+        if (text.match("选择题") != null || text.match("主观题") != null || text.match("单选题")) {
             console.log("title");
             continue;
         }
@@ -27,6 +28,7 @@ function fill_textbooks() {
             }
 
         } else if (ans.length == 5) {
+            console.log(ans);
             ans[0].querySelector("input").checked = "true";
         }
     }
@@ -35,6 +37,9 @@ function fill_textbooks() {
     for (let i = 0; i < adv.length; i++) {
         adv[i].value = "无";
     }
+
+    let btn = document.querySelector("#sub");
+    btn.click();
 }
 
 // 教师评教
